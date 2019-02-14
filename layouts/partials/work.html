@@ -1,0 +1,30 @@
+  <section class="portfolio_section bg" id="work">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3> <span></span> {{ .subtitle }} </h3>
+          <h2> {{ .title1 }} <br> {{ .title2 }}</h2>
+          <p>{{ .desc1 }}</p>
+          <br>
+          <p>{{ .desc2 }}</p>
+        </div>
+      </div>
+        <div class="portfolio_item">
+          <div class="row">
+            {{ range .portfolios }}
+            <div class="col-md-4">
+              <div class="hover_cont">
+                <p> {{.type}} </p>
+                <h2> {{.title}} </h2>
+                <a href=" {{.link}} ">{{.link_name}} </a>
+              </div>
+              <img src="{{.icon}}" alt=" {{.alt}} ">
+            </div>
+            {{end}}
+            <div class="view_all_portfolio">
+              <a href=" {{ .viewall }} ">View All</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>

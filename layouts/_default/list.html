@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <base href="{{ .Site.BaseURL }}">
+    {{ partial "header.html" }}
+<body>
+    
+    {{ partial "header_top.html" }}
+    {{ partial "nav.html" }}
+
+    {{ $aaa := getJSON "/data/index.json" }}
+    {{ range $aaa.banner }}
+        {{ partial "banner.html" . }}
+    {{ end }}
+    <a id="showHere"></a>
+
+    {{ range $aaa.aboutus }}
+        {{ partial "about_us.html" . }}
+    {{ end }}
+
+    {{ range $aaa.service }}
+        {{ partial "service.html" . }}
+    {{ end }}
+
+    {{ range $aaa.portfolio }}
+        {{ partial "work.html" . }}
+    {{ end }}
+
+    {{ range $aaa.ourteam }}
+        {{ partial "team.html" . }}
+    {{ end }}
+
+    {{ range $aaa.ourskills }}
+        {{ partial "skill.html" . }}
+    {{ end }}
+
+    {{ range $aaa.ourTechnology }}
+        {{ partial "technology.html" .}}
+    {{ end }}
+
+    {{ range $aaa.contact }}
+        {{ partial "contact.html" .}}
+    {{ end }}
+
+    {{ range $aaa.getstart }}
+        {{ partial "getstart.html" . }}
+    {{ end }}
+
+    {{ partial "footer.html" }}
+</body>
+</html>
